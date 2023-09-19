@@ -1,0 +1,26 @@
+{
+    "status": true,
+    "data": {
+        "id": "0412",
+        "lokasi": "KOTA PEKANBARU",
+        "daerah": "RIAU",
+        "koordinat": {
+            "lat": 0.5264444444444445,
+            "lon": 101.45062222222222,
+            "lintang": "0\u00b0 31' 35.2\" N",
+            "bujur": "101\u00b0 27' 2.24\" E"
+        },
+        "jadwal": {
+            "tanggal": "Jumat, 15\/09\/2023",
+            "imsak": "04:42",
+            "subuh": "04:52",
+            "terbit": "06:03",
+            "dhuha": "06:30",
+            "dzuhur": "12:13",
+            "ashar": "15:17",
+            "maghrib": "18:16",
+            "isya": "19:24",
+            "date": "2023-09-15"
+        }
+    }
+}
