@@ -35,13 +35,6 @@ class Dashboard extends BaseController
         } else {
             $this->data['jadwalSholat'] = false;
         }
-
-        // echo "<pre>";
-        // print_r($this->data);
-        // echo "</pre>";
-        // die;
-
-
         echo view('display_lte', $this->data);
     }
 

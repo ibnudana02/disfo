@@ -1,4 +1,5 @@
 
 writable/logs/
+public/videos/*
 
 /writable/session/*

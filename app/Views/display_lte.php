@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="<?= base_url() ?>plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>css/adminlte.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body class="hold-transition layout-top-nav layout-footer-fixed" style="height: auto;">
@@ -21,8 +22,8 @@
         <nav class="main-header navbar navbar-expand-md navbar-light bg-olive">
             <div class="container-fluid" style="height: 85px;">
                 <a href="<?= base_url() ?>index3.html" class="navbar-brand">
-                    <!-- <img src="<?= base_url('uploads/aplikasi/' . $app->logo) ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"> -->
-                    <h3 class="brand-text text-white"><?= "$app->nama_pt" ?></h3>
+                    <img src="<?= base_url('uploads/aplikasi/' . $app->logo) ?>" style="height: 40px;" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+                    <span class="h3 brand-text text-white"><?= "$app->nama_pt" ?></span>
                 </a>
 
                 <!-- Right navbar links -->
@@ -36,12 +37,15 @@
         </nav>
         <div class="content-wrapper">
             <div class="container-fluid px-2 pt-2">
+                <!-- <div class="row py-1">
+                    <marquee><b>JADWAL PETUGAS HARI INI ~ DOA : IBNU ~ ADZAN : IBNU ~ HADITS : IBNU</b></marquee>
+                </div> -->
                 <div class="row mb-0 px-1">
                     <div class="col-md-7">
                         <div class="card pt-0">
                             <div class="card-body px-1 py-1 mx-auto">
-                                <video loop="true" width="850" height="500" controls loop>
-                                    <source src="video/hasanah.mp4" type="video/mp4" />
+                                <video id="myvideo" width="850" height="500" controls loop>
+                                    <source src="videos/hasanah.mp4" type="video/mp4" />
                                 </video>
                             </div>
                         </div>
@@ -49,7 +53,7 @@
                     <div class="col-md-5">
                         <div class="card">
                             <div class="card-header text-center pb-1 text-bold" style="font-weight: 1000;">
-                                <h1>ESTIMASI BAGI HASIL</h1>
+                                <h1 class="animate__animated animate__fadeInRight">ESTIMASI BAGI HASIL</h1>
                             </div>
                             <div class="card-body px-1 py-1">
                                 <table class="table table-bordered table-hover table-striped" style="width:100%;font-size: 20px;">
@@ -88,8 +92,8 @@
                     <?php if ($jadwalSholat) : ?>
                         <?php foreach ($waktu as $key => $wk) : ?>
                             <div class="col-md-2 my-0">
-                                <div class="card <?= $wk['warna'] ?> color-palette  text-center">
-                                    <div class="card-header py-1.5">
+                                <div class="card <?= $wk['warna'] ?> color-palette text-center animate__animated animate__fadeInLeft">
+                                    <div class="card-header pb-1">
                                         <h3><?= strtoupper($wk['sholat']) ?></h3>
                                     </div>
                                     <div class="card-body">
@@ -129,9 +133,7 @@
             h = d.getHours();
             m = set(d.getMinutes());
             s = set(d.getSeconds());
-
             e.innerHTML = h + ':' + m + ':' + s + ' WIB';
-
             setTimeout('jam()', 1000);
         }
 
