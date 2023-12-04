@@ -13,6 +13,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= base_url() ?>css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
 </head>
 
 <body class="hold-transition layout-top-nav layout-footer-fixed" style="height: auto;">
@@ -44,8 +45,17 @@
                     <div class="col-md-7">
                         <div class="card pt-0">
                             <div class="card-body px-1 py-1 mx-auto">
-                                <video id="myvideo" width="850" height="500" controls loop>
+                                <!-- <video id="myvideo" width="850" height="500" controls loop>
                                     <source src="videos/hasanah.mp4" type="video/mp4" />
+                                </video> -->
+                                <!-- <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}"> -->
+                                <video id="my-video" class="video-js" width="850" height="500" data-setup="{}">
+                                    <source src="videos/hasanah.mp4" type="video/mp4" />
+                                    <p class="vjs-no-js">
+                                        To view this video please enable JavaScript, and consider upgrading to a
+                                        web browser that
+                                        <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                    </p>
                                 </video>
                             </div>
                         </div>
@@ -121,6 +131,7 @@
     <script src="<?= base_url() ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?= base_url() ?>js/adminlte.min.js"></script>
+    <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
     <script type="text/javascript">
         window.onload = function() {
             jam();
@@ -141,6 +152,14 @@
             e = e < 10 ? '0' + e : e;
             return e;
         }
+
+        // const player = videojs('vid1', {});
+        var player = videojs('my-video', {
+            controls: true,
+            autoplay: 'muted',
+            loop: "loop",
+            preload: "auto"
+        });
     </script>
 </body>
 
