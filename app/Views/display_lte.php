@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= $title ?></title>
-    <link rel="shortcut icon" type="image/jpg" href="<?= base_url('uploads/aplikasi/' . $app->logo) ?>" />
+    <link rel="shortcut icon" type="image/jpg" href="<?= base_url('public/uploads/aplikasi/' . $app->logo) ?>" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="<?= base_url() ?>plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url() ?>css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>public/css/adminlte.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="https://vjs.zencdn.net/8.6.1/video-js.css" rel="stylesheet" />
 </head>
@@ -23,7 +23,7 @@
         <nav class="main-header navbar navbar-expand-md navbar-light bg-olive">
             <div class="container-fluid" style="height: 85px;">
                 <a href="<?= base_url() ?>index3.html" class="navbar-brand">
-                    <img src="<?= base_url('uploads/aplikasi/' . $app->logo) ?>" style="height: 40px;" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+                    <img src="<?= base_url('public/uploads/aplikasi/' . $app->logo) ?>" style="height: 40px;" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
                     <span class="h3 brand-text text-white"><?= "$app->nama_pt" ?></span>
                 </a>
 
@@ -50,7 +50,7 @@
                                 </video> -->
                                 <!-- <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="MY_VIDEO_POSTER.jpg" data-setup="{}"> -->
                                 <video id="my-video" class="video-js" width="850" height="500" data-setup="{}">
-                                    <source src="videos/hasanah.mp4" type="video/mp4" />
+                                    <source src="public/videos/hasanah.mp4" type="video/mp4" />
                                     <p class="vjs-no-js">
                                         To view this video please enable JavaScript, and consider upgrading to a
                                         web browser that

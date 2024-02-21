@@ -2,8 +2,6 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Files\File;
-
 class Users extends BaseController
 {
     public function index()
@@ -156,7 +154,6 @@ class Users extends BaseController
         $this->data['role'] = $this->role_m->findAll();
         // $this->data['myProfil'] = (object) $this->user_m->join('kategori_user r', 'users.user_role=r.id')->where('username', $username)->first();
         $builder = $this->user_m->builder();
-
         $this->data['myProfil'] = $builder->select('users.id, name, username, email, r.role, image, no_hp, nik, tp_lahir, tgl_lahir, alamat, created_at')->join('kategori_user r', 'users.user_role=r.id')->where('username', $username)->get()->getRow();
         echo view('users/profil', $this->data);
     }

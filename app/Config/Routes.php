@@ -35,6 +35,7 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout', ['filter' => 'auth']);
 $routes->get('/display', 'Dashboard::displayNew');
 $routes->get('/test', 'Dashboard::test');
+$routes->get('/profil', 'Users::profil');
 $routes->group('aplikasi', function ($routes) {
     $routes->get('/', 'Aplikasi::index', ['filter' => 'auth']);
     $routes->post('update', 'Aplikasi::update');

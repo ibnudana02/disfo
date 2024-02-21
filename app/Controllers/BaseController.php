@@ -10,6 +10,7 @@ use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 use App\Models\AppModel;
 use App\Models\BaghasModel;
+use App\Models\RoleModel;
 use App\Models\UserModel;
 
 /**
@@ -63,7 +64,9 @@ abstract class BaseController extends Controller
         $this->App_m = new AppModel();
         $this->user_m = new UserModel($request);
         $this->Basil_m = new BaghasModel($request);
+        $this->role_m = new RoleModel();
         $this->data['app'] = (object)$this->App_m->first();
-        $this->data['user'] = (object) $this->user_m->find($this->session->get('id'));
+        $userBuilder = $this->user_m->builder();
+        $this->data['user'] = $userBuilder->select('name, username, user_role, image')->where('id', $this->session->get('id'))->get()->getRow();
     }
 }
