@@ -2,8 +2,8 @@
     <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
         <?php
         $uri = new \CodeIgniter\HTTP\URI(current_url());
-        $page = $uri->getSegment(2);
-        $item = $uri->getSegment(3);
+        $page = $uri->getSegment(1);
+        $item = $uri->getSegment(2);
         ?>
         <li class="nav-item <?= in_array($page, ['dashboard'])  ? "menu-open" : ""  ?>">
             <a href="<?= base_url('dashboard') ?>" class="nav-link <?= in_array($page, ['dashboard'])  ? "active" : ""  ?>">
