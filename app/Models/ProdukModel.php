@@ -5,15 +5,15 @@ namespace App\Models;
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\Model;
 
-class BaghasModel extends Model
+class ProdukModel extends Model
 {
-    protected $table = 'baghas';
-    protected $allowedFields = ['produk', 'nisbah_bank', 'nisbah_nsb', 'eq_rate', 'periode'];
+    protected $table = 'produk_dana';
+    protected $allowedFields = ['kdprd', 'produk', 'bagihasil'];
 
-    protected $column_order = ['id', 'produk', 'nisbah_bank', 'nisbah_nsb', 'eq_rate', 'periode'];
-    protected $column_search = ['produk', 'nisbah_bank', 'nisbah_nsb', 'eq_rate', 'periode'];
+    protected $column_order = ['id', 'kdprd', 'produk', 'bagihasil'];
+    protected $column_search = ['kdprd', 'produk', 'bagihasil'];
 
-    protected $order = [5, 'desc'];
+    protected $order = ['id' => 'ASC'];
     protected $request;
     protected $db;
     protected $dt;
@@ -23,16 +23,7 @@ class BaghasModel extends Model
         parent::__construct();
         $this->db = db_connect();
         $this->request = $request;
-        $this->dt = $this->db->table("$this->table b");
-    }
-
-    public function getBaghas($periode)
-    {
-        $this->dt->select('b.*, pd.produk');
-        $this->dt->join('produk_dana pd', 'b.produk=pd.kdprd');
-        $this->dt->where("DATE_FORMAT(b.periode,'%Y-%m')=", date('Y-m', strtotime($periode)));
-        $query = $this->dt->get();
-        return $query->getResult();
+        $this->dt = $this->db->table("$this->table u");
     }
 
     private function getDatatablesQuery()
@@ -63,8 +54,6 @@ class BaghasModel extends Model
     public function getDatatables()
     {
         $this->getDatatablesQuery();
-        $this->dt->select('b.*, pd.produk as nm_produk');
-        $this->dt->join('produk_dana pd', 'b.produk=pd.kdprd');
         if ($this->request->getVar('length') != -1)
             $this->dt->limit($this->request->getVar('length'), $this->request->getVar('start'));
         $query = $this->dt->get();

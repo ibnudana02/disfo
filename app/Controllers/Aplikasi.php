@@ -28,7 +28,7 @@ class Aplikasi extends BaseController
                         throw new \RuntimeException($fileImage->getErrorString() . '(' . $fileImage->getError() . ')');
                     } else {
                         $fileImage_name = $fileImage->getRandomName();
-                        $fileImage->move('uploads/aplikasi', $fileImage_name);
+                        $fileImage->move('public/uploads/aplikasi', $fileImage_name);
                     }
                 }
             }

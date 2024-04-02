@@ -11,10 +11,9 @@
                             <thead>
                                 <tr>
                                     <th width="5%" style="text-align: center;">No.</th>
-                                    <th>Nama</th>
-                                    <th>Username</th>
-                                    <th>Email</th>
-                                    <th>Role</th>
+                                    <th>Kode Produk</th>
+                                    <th>Produk</th>
+                                    <th>Bagi Hasil</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -27,14 +26,9 @@
         </div>
     </div>
 </section>
-<?= $this->include('users/modal_update') ?>
 <script type="text/javascript">
-    var base_url = "<?= base_url('users/') ?>";
-
+    var base_url = "<?= base_url('produk/') ?>";
     $(document).ready(function() {
-        $('.select2').select2({
-            width: '100%'
-        });
         var table = $('#datatable').DataTable({
             dom: 'Bfrtip',
             buttons: [{
@@ -47,16 +41,11 @@
             "serverSide": true,
             "responsive": true,
             columnDefs: [{
-                    orderable: false,
-                    targets: 4
-                },
-                {
-                    orderable: false,
-                    targets: 5
-                }
-            ],
+                orderable: false,
+                targets: 4
+            }, ],
             "order": [
-                [2, 'asc']
+                [1, 'asc']
             ],
             "ajax": {
                 "url": base_url + "list",

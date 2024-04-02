@@ -35,10 +35,32 @@ $routes->get('/dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/logout', 'Auth::logout', ['filter' => 'auth']);
 $routes->get('/display', 'Dashboard::displayNew');
 $routes->get('/test', 'Dashboard::test');
-$routes->get('/profil', 'Users::profil');
+$routes->get('/profil', 'Users::profil', ['filter' => 'auth']);
+$routes->group('produk', function ($routes) {
+    $routes->get('/', 'Produk::index', ['filter' => 'auth']);
+    $routes->post('list', 'Produk::list', ['filter' => 'auth']);
+});
+$routes->group('baghas', function ($routes) {
+    $routes->get('/', 'Baghas::index', ['filter' => 'auth']);
+    $routes->post('list', 'Baghas::list', ['filter' => 'auth']);
+    $routes->post('save', 'Baghas::save', ['filter' => 'auth']);
+    $routes->get('create', 'Baghas::create', ['filter' => 'auth']);
+    $routes->post('delete', 'Baghas::delete', ['filter' => 'auth']);
+    $routes->post('detail', 'Baghas::detail', ['filter' => 'auth']);
+    $routes->post('update', 'Baghas::update', ['filter' => 'auth']);
+});
 $routes->group('aplikasi', function ($routes) {
     $routes->get('/', 'Aplikasi::index', ['filter' => 'auth']);
-    $routes->post('update', 'Aplikasi::update');
+    $routes->post('update', 'Aplikasi::update', ['filter' => 'auth']);
+});
+$routes->group('users', function ($routes) {
+    $routes->get('/', 'Users::index', ['filter' => 'auth']);
+    $routes->post('save', 'Users::save', ['filter' => 'auth']);
+    $routes->get('create', 'Users::create', ['filter' => 'auth']);
+    $routes->post('list', 'Users::list', ['filter' => 'auth']);
+    $routes->post('detail', 'Users::detail', ['filter' => 'auth']);
+    $routes->post('update', 'Users::update', ['filter' => 'auth']);
+    $routes->post('delete', 'Users::delete', ['filter' => 'auth']);
 });
 
 

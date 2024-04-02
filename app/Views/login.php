@@ -10,11 +10,11 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/public/plugins/fontawesome-free/css/all.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="<?= base_url() ?>/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/public/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="<?= base_url() ?>/css/adminlte.min.css">
+    <link rel="stylesheet" href="<?= base_url() ?>/public/css/adminlte.min.css">
 </head>
 
 <body class="hold-transition login-page">
@@ -57,13 +57,13 @@
         </div>
     </div>
     <!-- jQuery -->
-    <script src="<?= base_url() ?>/plugins/jquery/jquery.min.js"></script>
+    <script src="<?= base_url() ?>/public/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="<?= base_url() ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url() ?>/public/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="<?= base_url() ?>/js/adminlte.min.js"></script>
-    <link rel="stylesheet" href="<?= base_url() ?>plugins/sweetalert2/sweetalert2.min.css">
-    <script src="<?= base_url() ?>plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="<?= base_url() ?>/public/js/adminlte.min.js"></script>
+    <link rel="stylesheet" href="<?= base_url() ?>/public/plugins/sweetalert2/sweetalert2.min.css">
+    <script src="<?= base_url() ?>/public/plugins/sweetalert2/sweetalert2.min.js"></script>
     <?php $session = session();
     if ($session->getFlashdata('auth')) : ?>
         <script>

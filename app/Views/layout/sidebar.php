@@ -2,8 +2,8 @@
     <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
         <?php
         $uri = new \CodeIgniter\HTTP\URI(current_url());
-        $page = $uri->getSegment(3);
-        $item = $uri->getSegment(4);
+        $page = $uri->getSegment(2);
+        $item = $uri->getSegment(3);
         ?>
         <li class="nav-item <?= in_array($page, ['dashboard'])  ? "menu-open" : ""  ?>">
             <a href="<?= base_url('dashboard') ?>" class="nav-link <?= in_array($page, ['dashboard'])  ? "active" : ""  ?>">
@@ -11,7 +11,7 @@
                 <p>Dashboard</p>
             </a>
         </li>
-        <?php $master = ['master', 'cost', 'category', 'notary', 'insurance', 'jasuransi', 'produk', 'jaminan']; ?>
+        <?php $master = ['master', 'cost', 'produk', 'notary', 'insurance', 'jasuransi', 'produk', 'jaminan']; ?>
         <li class="nav-item <?= in_array($page, $master)  ? "menu-open" : ""  ?>">
             <a href="<?= base_url('master') ?>" class="nav-link <?= in_array($page, $master)  ? "active" : ""  ?>">
                 <i class="fas fa-server nav-icon"></i>
@@ -19,15 +19,9 @@
             </a>
             <ul class="nav nav-treeview">
                 <li class="nav-item">
-                    <a href="<?= base_url('category') ?>" class="nav-link <?= in_array($page, ['category'])  ? "active" : ""  ?>">
+                    <a href="<?= base_url('produk') ?>" class="nav-link <?= in_array($page, ['produk'])  ? "active" : ""  ?>">
                         <i class="far fa-circle nav-icon"></i>
-                        <p>Master Kategori Biaya</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="<?= base_url('jasuransi') ?>" class="nav-link <?= in_array($page, ['jasuransi'])  ? "active" : ""  ?>">
-                        <i class="far fa-circle nav-icon"></i>
-                        <p>Master Jenis Asuransi</p>
+                        <p>Master Produk</p>
                     </a>
                 </li>
             </ul>
@@ -53,6 +47,12 @@
                         </a>
                     </li>
                 </ul>
+            </li>
+            <li class="nav-item <?= in_array($page, ['baghas'])  ? "menu-open" : ""  ?>">
+                <a href="<?= base_url('baghas') ?>" class="nav-link <?= in_array($page, ['baghas'])  ? "active" : ""  ?>">
+                    <i class="fas fa-wallet nav-icon"></i>
+                    <p>Bagi Hasil</p>
+                </a>
             </li>
             <li class="nav-item <?= in_array($page, ['aplikasi'])  ? "menu-open" : ""  ?>">
                 <a href="<?= base_url('aplikasi') ?>" class="nav-link <?= in_array($page, ['aplikasi'])  ? "active" : ""  ?>">

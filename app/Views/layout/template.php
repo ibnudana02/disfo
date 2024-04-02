@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= "$app->nm_aplikasi - " . strtoupper($title) ?></title>
     <!-- <title></?= "SIAP" ?></title> -->
-    <link rel="shortcut icon" type="image/jpg" href="<?= base_url('uploads/aplikasi/' . $app->logo) ?>" />
+    <link rel="shortcut icon" type="image/jpg" href="<?= base_url('public/uploads/aplikasi/' . $app->logo) ?>" />
     <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"> -->
+    <link rel="stylesheet" href="<?= base_url('public/plugins/select2/css/select2.css') ?>">
     <link rel="stylesheet" href="<?= base_url() ?>public/plugins/fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="<?= base_url() ?>public/css/adminlte.min.css">
     <!-- DataTables -->
@@ -29,6 +30,7 @@
     <!-- Sweetalert2 -->
     <link rel="stylesheet" href="<?= base_url() ?>public/plugins/sweetalert2/sweetalert2.min.css">
     <script src="<?= base_url() ?>public/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <script src="<?= base_url('public/plugins/select2/js/select2.full.js') ?>"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-navbar-fixed ">

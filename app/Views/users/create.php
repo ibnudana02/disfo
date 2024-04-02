@@ -13,7 +13,7 @@
                         <div class="form-group row">
                             <label for="inputEmail3" class="col-sm-3 col-form-label">Role User</label>
                             <div class="col-sm-9">
-                                <select name="user_role" id="user_role" class="form-control">
+                                <select name="user_role" id="user_role" class="form-control select2">
                                     <option value="">Pilih</option>
                                     <?php foreach ($role as $key => $kt) : ?>
                                         <option value="<?= $kt['id'] ?>"><?= $kt['role'] ?></option>
@@ -52,4 +52,9 @@
         </div>
     </div>
 </section>
+<script>
+    $('.select2').select2({
+        width: '100%'
+    });
+</script>
 <?= $this->endSection() ?>

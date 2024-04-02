@@ -55,6 +55,10 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="inputEmail3">API Jadwal Sholat </label>
+                            <textarea name="api_jadwal_sholat" id="api_jadwal_sholat" cols="30" rows="2" class="form-control"><?= $app->api_jadwal_sholat ?></textarea>
+                        </div>
                     </div>
                     <div class="card-footer">
                         <button type="submit" class="btn btn-primary">Simpan</button>
@@ -65,7 +69,7 @@
         </div>
     </div>
 </section>
-<script src="<?= base_url() ?>plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script src="<?= base_url() ?>public/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 <script>
     $(function() {
         bsCustomFileInput.init();

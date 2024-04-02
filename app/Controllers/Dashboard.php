@@ -9,6 +9,7 @@ class Dashboard extends BaseController
     {
         $this->data['title'] = 'Dashboard';
         $this->data['countUser'] = count($this->user_m->findAll());
+        $this->data['countProduk'] = count($this->produk_m->findAll());
         echo view('dashboard', $this->data);
     }
 
@@ -41,7 +42,9 @@ class Dashboard extends BaseController
     public function displayNew()
     {
         $this->data['title'] = 'Display Information';
-        $baghas = $this->Basil_m->getBaghas(date('Y-m-d'));
+        $updatedBaghas = $this->Basil_m->getBaghas(date('Y-m-d'));
+        $oldBaghas = $this->Basil_m->getBaghas(date('Y-m-d', strtotime('-1 month')));
+        $baghas = ($updatedBaghas) ? $updatedBaghas : $oldBaghas;
         $this->data['baghas'] = $baghas;
         $api_jadwal = json_decode($this->apiJadwal());
         $jadwal = $api_jadwal->data->timings;
