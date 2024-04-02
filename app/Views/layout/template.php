@@ -107,9 +107,8 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <?php $uri = new \CodeIgniter\HTTP\URI(current_url());
-                                $page = $uri->getSegment(3);
+                                $page = $uri->getSegment(2);
                                 ?>
-                                <!-- <li class="breadcrumb-item"><a href="<?= base_url('dashboard') ?>">Dashboard</a></li> -->
                                 <li class="breadcrumb-item"><a href="<?= base_url($page) ?>"><?= ucwords($page) ?></a></li>
                                 <li class="breadcrumb-item active"><?= $title ?></li>
                             </ol>
